@@ -1,0 +1,28 @@
+.trip-container {
+  display: flex;
+  margin: 20px 0;
+}
+
+.center-cropped {
+  width: 200px;
+  height: 250px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+.center-cropped img {
+  min-height: 100%;
+  min-width: 100%;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+  filter: alpha(opacity=0);
+}
+
+.right-content {
+  margin-left: 20px;
+}
+
+.trip-header {
+  margin-top: 5px;
+}

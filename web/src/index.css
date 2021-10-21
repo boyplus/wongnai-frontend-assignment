@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.blue {
+  color: #2c9cdb;
+}
+
+.space {
+  letter-spacing: 4px;
+}
+
+.big {
+  font-size: 3rem;
+}
+
+.center {
+  text-align: center;
+}
