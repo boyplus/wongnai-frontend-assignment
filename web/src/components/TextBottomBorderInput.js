@@ -3,7 +3,7 @@ import '../css/input.css'
 
 const TextBottomBorderInput = ({ value, onChange }) => {
   return <Fragment>
-    <div style={{ textAlign: 'center', backgroundColor: 'red' }}>
+    <div style={{ textAlign: 'center' }}>
       <input
         type='text'
         value={value}
@@ -12,7 +12,6 @@ const TextBottomBorderInput = ({ value, onChange }) => {
         className="bottom-border-input center-block">
       </input>
     </div>
-
   </Fragment>
 }
 

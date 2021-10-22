@@ -25,7 +25,7 @@ const App = () => {
 
   return <div className="App">
     <div className="container">
-      <h1 className="blue space big center">เที่ยวไหนดี</h1>
+      <h1 className="light-blue space big center">เที่ยวไหนดี</h1>
       <div className="input-container">
         <TextBottomBorderInput value={keyword} onChange={(e) => setKeyword(e.target.value)}></TextBottomBorderInput>
       </div>

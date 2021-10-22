@@ -1,0 +1,25 @@
+{
+  "name": "frontend-assignment",
+  "version": "1.0.0",
+  "description": "แบบทดสอบสำหรับ ผู้สมัครตำแหน่ง Software Engineer, Frontend การทำแบบทดสอบผู้สมัครจะต้องคำนึงถึง กฎสามข้อที่กล่าวไว้ด้านล่างเสมอ เพราะเราเชื่อว่าการพัฒนา Software ที่ดีนั้นไม่เพียงแค่ทำให้ Software ทำงานได้ตาม requirement อย่างเดียว แต่จะต้องคำนึงถึง user และการ maintainance ต่อไปในอนาคตด้วย",
+  "main": "index.js",
+  "scripts": {
+    "json-server": "npm run start --prefix json-server",
+    "server": "npm run dev --prefix api-gateway",
+    "client": "npm run start --prefix web",
+    "dev": "concurrently \"npm run server\" \"npm run client\"  \"npm run json-server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyplus/wongnai-frontend-assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boyplus/wongnai-frontend-assignment/issues"
+  },
+  "homepage": "https://github.com/boyplus/wongnai-frontend-assignment#readme",
+  "dependencies": {
+    "concurrently": "^6.3.0"
+  }
+}
