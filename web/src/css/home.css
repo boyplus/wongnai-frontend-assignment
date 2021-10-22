@@ -1,9 +1,4 @@
-html {
-  --color-grey: #828282;
-  --color-light-blue: #2c9cdb;
-}
-
-.App {
+.home {
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -23,24 +18,4 @@ html {
 
 .input-container {
   padding: 0 20px;
-}
-
-.grey {
-  color: var(--color-grey);
-}
-
-.light-blue {
-  color: var(--color-light-blue);
-}
-
-.space {
-  letter-spacing: 4px;
-}
-
-.big {
-  font-size: 3rem;
-}
-
-.center {
-  text-align: center;
 }

@@ -1,16 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import '../../css/trip/trip.css';
-import '../../App.css';
+import '../../css/App.css';
 
 const Trip = ({ trip }) => {
-
-  const getFirstLineDescription = () => {
-    console.log(trip.description.split(/\r?\n\n/));
-    return trip.description.split(/\r?\n\n/)[0];
-  }
-  const getSecondLineDescription = () => {
-    return trip.description.split(/\r?\n\n/)[1];
-  }
+  const newLineRex = /\r?\n\n/;
+  const spiltedDescription = trip.description.split(newLineRex);
 
 
   return <div className="trip-container">
@@ -21,11 +15,24 @@ const Trip = ({ trip }) => {
     </div>
     <div className="right-content">
       <h3 className="trip-header">{trip.title}</h3>
-      <p className="grey">{getFirstLineDescription()}</p>
+      <p className="grey">{spiltedDescription[0]} {spiltedDescription.length === 1 ? <a href="" className="light-blue">อ่านต่อ</a> : null}</p>
       <br />
-      <p className="grey">{getSecondLineDescription()}</p>
+      <p className="grey">
+        {spiltedDescription.length > 1 ?
+          <Fragment>
+            {spiltedDescription[1]?.substring(0, 30) + ' .... '}
+            <a href="" className="light-blue">อ่านต่อ</a>
+          </Fragment> : null}
+
+      </p>
+      <p className="grey">
+        หมวด {trip.tags.map((tag, index) => {
+          return index === trip.tags.length - 2 ? <span className="mg-l-5">และ</span> : <span className="link mg-l-5">{tag}</span>
+        })}
+
+      </p>
     </div>
-  </div>
+  </div >
 }
 
 export default Trip;
