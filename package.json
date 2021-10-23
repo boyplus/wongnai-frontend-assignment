@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "json-server": "npm run start --prefix json-server",
-    "server": "npm run dev --prefix api-gateway",
+    "server": "npm run start --prefix api-gateway",
+    "server-dev": "npm run dev --prefix api-gateway",
     "client": "npm run start --prefix web",
-    "dev": "concurrently \"npm run server\" \"npm run client\"  \"npm run json-server\""
+    "dev": "concurrently \"npm run server-dev\" \"npm run client\"  \"npm run json-server\"",
+    "start": "concurrently \"npm run server\" \"npm run client\"  \"npm run json-server\""
   },
   "repository": {
     "type": "git",
