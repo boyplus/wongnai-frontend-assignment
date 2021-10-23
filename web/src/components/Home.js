@@ -42,7 +42,12 @@ const Home = (props) => {
     <div className="container">
       <h1 className="light-blue space big center">เที่ยวไหนดี</h1>
       <div className="input-container">
-        <TextBottomBorderInput value={keyword} onChange={(e) => handleChangeKeyword(e.target.value)}></TextBottomBorderInput>
+        <TextBottomBorderInput
+          value={keyword}
+          onChange={(e) => handleChangeKeyword(e.target.value)}
+          placeholder='หาที่เที่ยวแล้วไปกัน...'
+        >
+        </TextBottomBorderInput>
       </div>
       <Trips trips={trips} changeKeyword={handleChangeKeyword}></Trips>
     </div>

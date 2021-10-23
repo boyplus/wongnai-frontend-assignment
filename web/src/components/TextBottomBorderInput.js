@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import '../css/input.css'
 
-const TextBottomBorderInput = ({ value, onChange }) => {
+const TextBottomBorderInput = ({ value, onChange, placeholder }) => {
   return <Fragment>
     <div style={{ textAlign: 'center' }}>
       <input
@@ -9,6 +9,7 @@ const TextBottomBorderInput = ({ value, onChange }) => {
         value={value}
         onChange={onChange}
         autoFocus={true}
+        placeholder={placeholder}
         className="bottom-border-input center-block">
       </input>
     </div>
