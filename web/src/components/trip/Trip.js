@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import '../../css/trip/trip.css';
 import '../../css/App.css';
 
-const Trip = ({ trip }) => {
+const Trip = ({ trip, changeKeyword }) => {
   const newLineRex = /\r?\n\n/;
   const spiltedDescription = trip.description.split(newLineRex);
 
@@ -18,7 +18,11 @@ const Trip = ({ trip }) => {
 
     <div className="right-content content">
       <div>
-        <h3 className="trip-header">{trip.title}</h3>
+
+        <h3 className="trip-header">
+          <a href={trip.url} target="__blank" className="un-style-link">{trip.title}</a>
+        </h3>
+
         <p className="grey">{spiltedDescription[0]} {spiltedDescription.length === 1 ? readMore : null}</p>
         <br />
         <p className="grey">
@@ -31,7 +35,10 @@ const Trip = ({ trip }) => {
         </p>
         <p className="grey">
           หมวด {trip.tags.map((tag, index) => {
-            return index === trip.tags.length - 2 ? <span className="mg-l-5" key="and">และ</span> : <span key={tag} className="underline link mg-l-5">{tag}</span>
+            return index === trip.tags.length - 2 ?
+              <span className="mg-l-5" key="and">และ</span>
+              :
+              <span key={tag} className="underline link mg-l-5" onClick={() => changeKeyword(tag)}>{tag}</span>
           })}
         </p>
       </div>
