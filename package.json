@@ -10,7 +10,9 @@
     "client": "npm run start --prefix web",
     "dev": "concurrently \"npm run server-dev\" \"npm run client\"  \"npm run json-server\"",
     "install": "concurrently  \"npm install --prefix json-server\" \"npm install --prefix api-gateway\" \"npm install --prefix web\"",
-    "start": "concurrently \"npm run server\" \"npm run client\"  \"npm run json-server\""
+    "start": "concurrently \"npm run server\" \"npm run client\"  \"npm run json-server\"",
+    "build": "npm run build --prefix web",
+    "prod": "concurrently \"npm run server\" \"npm run json-server\""
   },
   "repository": {
     "type": "git",

@@ -15,7 +15,12 @@ app.get('/api/trips', async (req, res) => {
   } catch (error) {
     res.status(500).send(error)
   }
+});
 
+app.use(express.static('../web/build'));
+const path = require('path');
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
 const PORT = 5000;
