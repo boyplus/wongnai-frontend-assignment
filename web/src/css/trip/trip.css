@@ -1,15 +1,14 @@
 .trip-container {
   display: flex;
-  margin: 20px 0;
+  margin: 50px 0;
 }
 
 .center-cropped {
-  width: 200px;
-  height: 250px;
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
   border-radius: 5%;
+  height: 100%;
 }
 
 .center-cropped img {
@@ -19,8 +18,19 @@
   filter: alpha(opacity=0);
 }
 
+.photos {
+  display: flex;
+}
+
+.photo {
+  margin-right: 20px;
+}
+
 .right-content {
   margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .trip-header {
