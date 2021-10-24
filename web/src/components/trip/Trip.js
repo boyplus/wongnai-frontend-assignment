@@ -6,13 +6,18 @@ const Trip = ({ trip, changeKeyword }) => {
   const newLineRex = /\r?\n\n/;
   const spiltedDescription = trip.description.split(newLineRex);
 
+  const handleClickTag = (tag) => {
+    changeKeyword(tag);
+    window.scrollTo(0, 0);
+  }
+
   const readMore = <a href={trip.url} target="__blank" className="light-blue">อ่านต่อ</a>
 
   return <div className="trip-container">
 
     <div className="left-content content">
       <div className="main-img center-cropped">
-        <img src={trip.photos[0]} alt={`${trip.title} preview`} width="200" height="100%" />
+        <img src={trip.photos[0]} alt={`${trip.title} preview`} width="230" height="100%" />
       </div>
     </div>
 
@@ -38,7 +43,7 @@ const Trip = ({ trip, changeKeyword }) => {
             return index === trip.tags.length - 2 ?
               <span className="mg-l-5" key="and">และ</span>
               :
-              <span key={tag} className="underline link mg-l-5" onClick={() => changeKeyword(tag)}>{tag}</span>
+              <span key={tag} className="underline link mg-l-5" onClick={() => handleClickTag(tag)}>{tag}</span>
           })}
         </p>
       </div>
@@ -46,7 +51,7 @@ const Trip = ({ trip, changeKeyword }) => {
       <div className="photos">
         {trip.photos.slice(1, 4).map((photo) => {
           return <div className="center-cropped photo" key={photo}>
-            <img src={photo} alt={`${trip.title} preview`} width="120" height="100%" />
+            <img src={photo} alt={`${trip.title} preview`} width="120" height="80" />
           </div>
         })}
       </div>

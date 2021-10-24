@@ -36,3 +36,12 @@
 .trip-header {
   margin-top: 5px;
 }
+
+@media only screen and (max-width: 769px) {
+  .trip-container {
+    flex-direction: column;
+  }
+  .photo {
+    margin-right: 5px;
+  }
+}
