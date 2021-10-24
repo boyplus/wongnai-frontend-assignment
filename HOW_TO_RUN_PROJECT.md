@@ -21,7 +21,7 @@ npm run start
 
 **How to run the project in production (build react app)**
 
-I use nodeJS to serve static file of react app
+I use nodeJS (on port 5000) to serve static file of react app
 
 ***Note** You can access web application on port 5000
 
