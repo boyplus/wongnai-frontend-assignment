@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import '../css/input.css'
 
-const TextBottomBorderInput = ({ value, onChange, placeholder }) => {
+const TextInputBottomBorder = ({ value, onChange, placeholder }) => {
   return <Fragment>
     <div style={{ textAlign: 'center' }}>
       <input
@@ -16,4 +16,4 @@ const TextBottomBorderInput = ({ value, onChange, placeholder }) => {
   </Fragment>
 }
 
-export default TextBottomBorderInput;
+export default TextInputBottomBorder;

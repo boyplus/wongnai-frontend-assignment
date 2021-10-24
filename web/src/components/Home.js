@@ -4,7 +4,7 @@ import * as qs from 'query-string';
 import { useAlert } from "react-alert";
 
 import Trips from './trip/Trips';
-import TextBottomBorderInput from './TextBottomBorderInput';
+import TextInputBottomBorder from './TextInputBottomBorder';
 
 import api from '../axios';
 import createRecord from '../utils/createRecord';
@@ -29,13 +29,13 @@ const Home = (props) => {
 
   const handleChangeKeyword = (newKeyword) => {
     setKeyword(newKeyword);
-    props.history.push({
+    const newSearch = {
       pathname: '/',
       search: `?keyword=${newKeyword}`
-    });
+    };
+    if (!newKeyword) delete newSearch.search;
+    props.history.replace(newSearch);
   }
-
-
 
   useEffect(() => {
     fetchTrips();
@@ -49,12 +49,12 @@ const Home = (props) => {
     <div className="container">
       <h1 className="light-blue space big center">เที่ยวไหนดี</h1>
       <div className="input-container">
-        <TextBottomBorderInput
+        <TextInputBottomBorder
           value={keyword}
           onChange={(e) => handleChangeKeyword(e.target.value)}
           placeholder='หาที่เที่ยวแล้วไปกัน...'
         >
-        </TextBottomBorderInput>
+        </TextInputBottomBorder>
       </div>
       <Trips trips={trips} changeKeyword={handleChangeKeyword}></Trips>
     </div>
